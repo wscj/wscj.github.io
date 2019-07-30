@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<script src="./vconsole.min.js"></script>
+	<script>
+	  // init vConsole
+	  var vConsole = new VConsole();
+	  console.log('Hello world');
+	  function test () {
+	  	console.log(1, navigator.getUserMedia)
+	  }
+	  function test2 (){
+	  	console.log(2, navigator.mediaDevices.getUserMedia)
+	  }
+	</script>
+
+</head>
+<body>
+<button onclick="test()">navigator.getUserMedia</button>
+<button onclick="test2()">navigator.mediaDevices.getUserMedia</button>
+</body>
+</html>
