@@ -15,11 +15,41 @@
 	  function test2 (){
 	  	console.log(2, navigator.mediaDevices.getUserMedia)
 	  }
-	</script>
+	  function onChange3 (e) {
+	  	var img = document.getElementById('img3')
+      var fileReader = new FileReader()
+      fileReader.onload = function () {
+        img.src = fileReader.result
+      }
 
+      fileReader.readAsDataURL(e[0].target.files[0])
+	  }
+	  function onChange4 (e) {
+	  	var img = document.getElementById('img4_1')
+      var fileReader = new FileReader()
+      fileReader.onload = function () {
+        img.src = fileReader.result
+      }
+
+      fileReader.readAsDataURL(e[0].target.files[0])
+	  }
+	</script>
+	<style type="text/css">
+		img {
+			width: 100px;
+		}
+	</style>
 </head>
 <body>
 <button onclick="test()">navigator.getUserMedia</button>
 <button onclick="test2()">navigator.mediaDevices.getUserMedia</button>
+<input type="file" capture="camera" accept="image/*" onchange="onChange3(arguments)" />
+<input type="file" accept="image/*" onchange="onChange4(arguments)" />
+<img src="" id="img3">
+<div>
+	<img src="" id="img4_1">
+	<img src="" id="img4_2">
+	<img src="" id="img4_3">
+</div>
 </body>
 </html>
