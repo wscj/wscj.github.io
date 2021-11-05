@@ -7,6 +7,17 @@
   <title>Document</title>
 </head>
 <body>
-  666
+  <input
+    type="file"
+    accept="image/*"
+    className="hidden-btn"
+    id="select-photo"
+    multiple
+  />
+  <script>
+    document.getElementById('select-photo').addEventListener('change', (e) => {
+      alert(e.target.files.length)
+    })
+  </script>
 </body>
 </html>
